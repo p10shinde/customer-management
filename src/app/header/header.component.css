@@ -1,0 +1,17 @@
+mat-toolbar button{
+  margin: 5px;
+}
+
+mat-toolbar .appTitle{
+  margin-left: 20px;
+  font-size: 2rem;
+}
+
+mat-toolbar img{
+  width: 50px;
+}
+
+mat-toolbar .toolButton{
+  margin-left: 80px;
+}
+
