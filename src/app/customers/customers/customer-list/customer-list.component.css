@@ -1,0 +1,53 @@
+div.main {
+  height: 500px;
+}
+div.main .mat_card {
+  max-width: 210px;
+  width: 300px;
+  padding: 0;
+}
+div.main .mat_card div.header {
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  height: 2rem;
+  background: #abb4e2;
+}
+div.main .mat_card div.content {
+  padding: 16px;
+}
+div.main .mat_card mat-card-footer button {
+  float: right;
+}
+div.main .example-header-image {
+  background-image: url("../../../../assets/images/user_f.png");
+  background-size: cover;
+}
+div.main table {
+  width: 100%;
+}
+div.main table th:nth-child(1) {
+  width: 10%;
+}
+div.main table th:nth-child(2) {
+  width: 20%;
+}
+div.main table th:nth-child(3) {
+  width: 10%;
+}
+div.main table th:nth-child(4) {
+  width: 10%;
+}
+div.main table th:nth-child(5) {
+  width: 30%;
+}
+div.main table th:nth-child(6) {
+  width: 10%;
+}
+div.main table th:nth-child(7) {
+  width: 10%;
+}

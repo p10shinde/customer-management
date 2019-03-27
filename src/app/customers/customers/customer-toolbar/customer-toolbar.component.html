@@ -1,12 +1,12 @@
 <div>
     <mat-list>
         <mat-list-item >
-          <button  mat-button><mat-icon matListIcon>grid_on</mat-icon>Card View</button>
+          <button [ngClass]="cardViewButton ?  'buttonInactive' : ''" (click)="toggleViewCard($event)" mat-button><mat-icon matListIcon>grid_on</mat-icon>Card View</button>
         </mat-list-item>
     </mat-list>
     <mat-list>
         <mat-list-item >
-          <button disabled mat-button><mat-icon matListIcon>format_list_bulleted</mat-icon>List View</button>
+          <button [ngClass]="listViewButton ?  'buttonInactive' : ''" (click)="toggleViewList($event)" mat-button><mat-icon matListIcon>format_list_bulleted</mat-icon>List View</button>
         </mat-list-item>
     </mat-list>
     <mat-list>

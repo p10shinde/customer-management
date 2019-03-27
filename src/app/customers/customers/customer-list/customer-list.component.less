@@ -1,6 +1,55 @@
-div{
-  img{
+div.main{
+  height: 500px;
+  .mat_card{
+    max-width: 210px;
+    width: 300px;
+    padding: 0;
+    div.header{
+      display: flex;
+      box-sizing: border-box;
+      padding-left: 16px;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      white-space: nowrap;
+      height: 2rem;
+      background: lighten(#3f51b5,30%);
+    }
+    div.content{
+      padding: 16px;
+    }
+    mat-card-footer button{
+      float: right;
+    }
+  }
 
-    width: 50px;
+  .example-header-image{
+    background-image: url("../../../../assets/images/user_f.png");
+    background-size: cover;
+  }
+
+  table{
+    width: 100%;
+    th:nth-child(1){ //icon
+      width: 10%;
+    }
+    th:nth-child(2){ //Name
+      width: 20%;
+    }
+    th:nth-child(3){ //City
+      width: 10%;
+    }
+    th:nth-child(4){ //State
+      width: 10%;
+    }
+    th:nth-child(5){ //Address
+      width: 30%;
+    }
+    th:nth-child(6){ //Order Total
+      width: 10%;
+    }
+    th:nth-child(7){ //View Orders
+      width: 10%;
+    }
   }
 }
