@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,12 @@ import { CustomersComponent } from './customers/customers/customers.component';
 import { CustomerHeaderComponent } from './customers/customers/customer-header/customer-header.component';
 import { CustomerToolbarComponent } from './customers/customers/customer-toolbar/customer-toolbar.component';
 import { CustomerListComponent } from './customers/customers/customer-list/customer-list.component';
+import { GeneralService } from './customers/generalService';
+
+const appRoutes: Routes = [
+  { path: 'customers', component: CustomersComponent },
+];
+
 
 @NgModule({
   declarations: [
@@ -22,6 +29,10 @@ import { CustomerListComponent } from './customers/customers/customer-list/custo
     CustomerListComponent
   ],
   imports: [
+      RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: true }
+      ),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -34,7 +45,7 @@ import { CustomerListComponent } from './customers/customers/customer-list/custo
     MatGridListModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [GeneralService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GeneralService } from '../../generalService';
 
 @Component({
   selector: 'app-customer-toolbar',
@@ -6,13 +7,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./customer-toolbar.component.less']
 })
 export class CustomerToolbarComponent implements OnInit {
-  // @ViewChild('cardViewButton')
   cardViewButton;
-
-  // @ViewChild('listViewButton')
   listViewButton;
 
-  constructor() { }
+
+  constructor(private gs: GeneralService) { }
 
   ngOnInit() {
     this.cardViewButton = false;
@@ -22,10 +21,12 @@ export class CustomerToolbarComponent implements OnInit {
   toggleViewCard(e) {
     this.listViewButton = true; // disabled
     this.cardViewButton = false;
+    this.gs.changeView('card');
   }
 
   toggleViewList(e) {
     this.cardViewButton = true; // disabled
     this.listViewButton = false;
+    this.gs.changeView('list');
   }
 }

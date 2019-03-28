@@ -1,5 +1,5 @@
 <div class="main">
-  <mat-grid-list cols="5" rowHeight="4:3" class="customerCardView" [style.display]="true ? 'none' : 'block'">
+  <mat-grid-list cols="5" rowHeight="4:3" class="customerCardView" [style.display]="cardView ? 'block' : 'none'">
       <mat-grid-tile *ngFor="let c of customers">
           <mat-card class="mat_card" color="primary">
               <div class="header">
@@ -16,7 +16,7 @@
             </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-    <table mat-table [dataSource]="customers">
+    <table mat-table [dataSource]="customers" class="customerListView" [style.display]="listView ? 'block' : 'none'">
         <ng-container matColumnDef="icon">
             <th mat-header-cell *matHeaderCellDef>  </th>
             <td mat-cell *matCellDef="let customer"> <div mat-card-avatar class="example-header-image"></div> </td>

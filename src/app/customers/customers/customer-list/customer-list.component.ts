@@ -1,13 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { GeneralService } from '../../generalService';
+
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.less']
 })
-export class CustomerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  viewChangedSub = new Subscription();
+  cardView = true;
+  listView = false;
+
+  constructor(private gs: GeneralService) { }
 
   customers = [
     { name: 'ABC', city: 'City1', state: 'State1', icon: '', address: 'address1 address1 address1',
@@ -36,6 +43,19 @@ export class CustomerListComponent implements OnInit {
 
 
   ngOnInit() {
+    this.viewChangedSub = this.gs.getViewUpdatedListener().subscribe((type) => {
+      if (type === 'card') {
+        this.cardView = true;
+        this.listView = false;
+      } else if (type === 'list') {
+        this.cardView = false;
+        this.listView = true;
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.viewChangedSub.unsubscribe();
   }
 
 }
